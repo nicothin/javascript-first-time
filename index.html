@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript для тех, кто никогда не</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+  <link rel="stylesheet" href="prism/prism.css">
+  <link rel="stylesheet" href="shower/nicothin.css">
+</head>
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Javascript для тех, кто никогда не</h1>
+  </header>
+
+  <section class="slide" id="cover">
+    <h2>Javascript для тех, кто никогда не</h2>
+    <p>
+      <a href="http://nicothin.pro">Николай Громов</a>
+    </p>
+    <figure>
+      <img class="cover" src="pictures/cover.jpg" alt="go-go-go!">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Javascript</h2>
+    <ol>
+      <li><b>Для браузера</b><br>Пишем <code>script.js</code>, подключаем на странице и он выполняется после загрузки.</li>
+      <li class="next"><b>Для Node.js</b><br>Пишем <code>script.js</code> и запускаем вне браузера.</li>
+    </ol>
+    <!-- <pre class="language-bash">
+      <code># В терминале</code>
+      <code>node script.js</code>
+    </pre> -->
+  </section>
+
+  <section class="slide">
+    <pre class="language-html">
+      <code class="comment">&lt;!DOCTYPE html></code>
+      <code class="comment">&lt;html lang="ru"></code>
+      <code class="comment">&lt;head></code>
+      <code class="comment">  &lt;meta charset="UTF-8"></code>
+      <code class="comment">  &lt;title>Документ&lt;/title></code>
+      <code>  &lt;script src="js/script-01.js" defer>&lt;/script></code>
+      <code class="comment">&lt;/head></code>
+      <code class="comment">&lt;body></code>
+      <code class="comment">  &lt;header>...&lt;/header></code>
+      <code class="comment">  &lt;main>...&lt;/main></code>
+      <code class="comment">  &lt;footer>...&lt;/footer></code>
+      <code>  &lt;script src="js/script-02.js">&lt;/script></code>
+      <code>  &lt;script src="js/script-03.js">&lt;/script></code>
+      <code class="comment">&lt;/body></code>
+      <code class="comment">&lt;/html></code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre class="language-html">
+      <code class="comment">&lt;!DOCTYPE html></code>
+      <code class="comment">&lt;html lang="ru"></code>
+      <code class="comment">&lt;head></code>
+      <code class="comment">  &lt;meta charset="UTF-8"></code>
+      <code class="comment">  &lt;title>Документ&lt;/title></code>
+      <code class="comment">&lt;/head></code>
+      <code class="comment">&lt;body></code>
+      <code class="comment">  &lt;header>...&lt;/header></code>
+      <code class="comment">  &lt;main>...&lt;/main></code>
+      <code class="comment">  &lt;footer>...&lt;/footer></code>
+      <code>  &lt;script></code>
+      <code class="language-js">    alert('hello world');</code>
+      <code>  &lt;/script></code>
+      <code class="comment">&lt;/body></code>
+      <code class="comment">&lt;/html></code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Что такое программирование?</h2>
+    <p class="next">Это написание программ.</p>
+    <h3 class="next">Что такое программа?</h3>
+    <div class="next" style="margin-top: 2em; display: flex; justify-content: center;">
+      <div style="margin-right: 4em;">
+        <span style="font-size: 94px;">1.</span> <img src="/pictures/002-interface.svg" alt="" width="200"
+      style="vertical-align: -2.5em;">
+      <br>
+      <div style="margin-top: 1em; padding-left: 5.3em;">Данные</div>
+      </div>
+      <div>
+        <span style="font-size: 94px;">2.</span> <img src="/pictures/001-algorithm.svg" alt="" width="200"
+      style="vertical-align: -2.5em;">
+      <br>
+      <div style="margin-top: 1em; padding-left: 5.1em;">Алгоритм</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" style="background-color: #462813;">
+    <h2 style="color: #fff; text-align: center;">Данные — продукты в рецепте</h2>
+    <img class="cover" src="pictures/coffee-1.jpg" alt="coffee" style="height: 100%; width: auto; transform: translate(-50%,-42%);">
+  </section>
+
+  <section class="slide" style="background-color: #DED5CB;">
+    <h2 style="text-align: center;">Алгоритм — инструкция как работать с данными</h2>
+    <img class="cover" src="pictures/coffee-2.jpg" alt="coffee" style="height: 80%; width: auto; transform: translate(-50%,-42%);">
+  </section>
+
+
+
+
+
+  <section class="slide">
+    <h2 class="shout">Данные</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Откуда берутся данные</h2>
+    <ul>
+      <li>Пришли в файле со скриптом.</li>
+      <li>Пришли как результат запроса к серверу в процессе работы скрипта.</li>
+      <li>Введены пользователем.</li>
+    </ul>
+    <pre class="language-  next">
+      <code>Возьми кофе   (16 г)</code>
+      <code>Возьми воду   (80 мл)</code>
+      <code>Возьми молоко (40 мл)</code>
+      <code> </code>
+      <code>функция сделайКапучино (кофе, вода, молоко) {</code>
+      <code>  Возьми кофе, измельчи...</code>
+      <code>}</code>
+    </pre>
+    <pre class="language-js  next" style="position: absolute; bottom: -1px; left: 70px;">
+      <code>let coffee =   16; // данные сразу есть в программе</code>
+      <code>let water  =   80; // данные сразу есть в программе</code>
+      <code>let milk   =   40; // данные сразу есть в программе</code>
+      <code> </code>
+      <code>function makeCappuccino(coffee, water, milk) {</code>
+      <code>  // Возьми кофе, измельчи...</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Данные хранятся в переменных</h2>
+    <p>Переменная — коробка с данными (проименованный участок памяти).</p>
+    <pre class="language-js">
+      <code>var dislikesCounter = 768; // старый вариант</code>
+      <code>let likesCounter    = 768; // переменная</code>
+      <code>const likesNumber   = 768; // константа</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Типы простых данных</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Пакет кофе</code>
+        <code>Бутылка молока</code>
+        <code>Упаковка гречи</code>
+        <code>Закрытая банка (пустая)</code>
+        <code>Форма для выпекания (пустая)</code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>let counter    = 768; // тип ЧИСЛО (целое или дробное число без кавычек)</code>
+        <code>let message    = `Привет!`; // тип СТРОКА (что-то в кавычках ``, '', "")</code>
+        <code>let authorized = true;      // тип ЛОГИЧЕСКИЙ (или true, или false)</code>
+        <code>let box        = undefined; // значение не присвоено </code>
+        <code>let responsive = null;      // значение неизвестно</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Простые типы данных слишком простые</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Пакет кофе 1</code>
+        <code>Название пакета кофе 1: Lavazza</code>
+        <code>Вес пакета кофе 1: 1000</code>
+        <code>В пакете 1 кофе в зёрнах: да</code>
+        <code>Cтепень обжарки содержимого пакета кофе 1: 3</code>
+        <code>Cостав кофе в пакете 1: 80% арабики, 20% робусты</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Объект</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Пакет кофе</code>
+        <code>  Название: Lavazza</code>
+        <code>  Вес: 1000</code>
+        <code>  В зёрнах: да</code>
+        <code>  Cтепень обжарки: 3</code>
+        <code>  Cостав:</code>
+        <code>    Арабика: 80</code>
+        <code>    Робуста: 20</code>
+        <code> </code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const coffee = {</code>
+        <code>  name: 'Lavazza',</code>
+        <code>  weight: 1000,</code>
+        <code>  beans: true,</code>
+        <code>  fryingDegre: 3,</code>
+        <code>  composition: {</code>
+        <code>    arabica: 80,</code>
+        <code>    robusta: 20</code>
+        <code>  }</code>
+        <code>};</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Объект</h2>
+    <pre class="language-js">
+      <code>const coffee = {</code>
+      <code>  name: 'Lavazza',</code>
+      <code>  composition: {</code>
+      <code>    arabica: 80,</code>
+      <code>    robusta: 20</code>
+      <code>  }</code>
+      <code>};</code>
+      <code> </code>
+      <code>let name = coffee.name;                   // 'Lavazza'</code>
+      <code>let robusta = coffee.composition.robusta; // 20</code>
+      <code> </code>
+      <code>alert( coffee.composition.robusta );</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Список (массив)</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Список покупок</code>
+        <code>  Кофе</code>
+        <code>  Молоко</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const buyList = [</code>
+        <code>  'coffee', // 0: 'coffee',</code>
+        <code>  'milk',   // 1: 'milk',</code>
+        <code>]</code>
+      </pre>
+    </div>
+    <pre class="language-js  next">
+      <code>alert( buyList[0] ); // 'coffee'</code>
+      <code>alert( buyList[1] ); // 'milk'</code>
+      <code> </code>
+      <code>// У списков есть автоматическое свойство «длина»</code>
+      <code>alert( buyList.length ); // 2</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Список объектов</h2>
+    <pre class="language-js">
+      <code>const buyList = [</code>
+      <code>  {</code>
+      <code>    name: 'coffee',</code>
+      <code>    beans: true,</code>
+      <code>    weight: 1000,</code>
+      <code>  },</code>
+      <code>  {</code>
+      <code>    name: 'milk',</code>
+      <code>    fat: 2,</code>
+      <code>    volume: 500,</code>
+      <code>  },</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide" style="background-color: #B3B3B3;">
+    <h2 style="text-align: center; white-space: nowrap;">Какие данные потребуются для модального окна?</h2>
+    <img class="cover" src="pictures/product-01.jpg" alt="coffee" style="height: 80%; width: auto; transform: translate(-50%,-39%);">
+  </section>
+
+
+
+
+
+
+
+  <section class="slide">
+    <h2 class="shout">Алгоритмы</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Условия</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Количество кофе 125 г</code>
+        <code> </code>
+        <code>Кофе более или равно 16 г?</code>
+        <code>  Приготовить капучино</code>
+        <code> </code>
+        <code>Иначе</code>
+        <code>  Сходить в магазин и купить кофе</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const coffeeWeight = 125;</code>
+        <code> </code>
+        <code>if (coffeeWeight >= 16) {                    </code>
+        <code>  makeCappuccino();</code>
+        <code>}</code>
+        <code>else {</code>
+        <code>  buyCoffee();</code>
+        <code>}</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Условия</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Посетитель авторизовался</code>
+        <code> </code>
+        <code>Посетитель авторизован?</code>
+        <code>  Показать аватар посетителя</code>
+        <code> </code>
+        <code>Иначе</code>
+        <code>  Показать кнопку авторизации</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const userAuthorized = true;                    </code>
+        <code> </code>
+        <code>if (userAuthorized) {</code>
+        <code>  showAvatar();</code>
+        <code>}</code>
+        <code>else {</code>
+        <code>  showLoginButton();</code>
+        <code>}</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Условия</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>У покупателя в корзине товаров на 2400 р</code>
+        <code> </code>
+        <code>Посетитель покупает на 2500 и более?</code>
+        <code>  Подсчитать скидку в 10%</code>
+        <code> </code>
+        <code>Иначе, если покупает на 2000 и более, но менее чем на 2500</code>
+        <code>   Подсчитать скидку в 6%</code>
+        <code> </code>
+        <code>Иначе</code>
+        <code>   Подсчитать скидку в 2%</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const price = 2400;                    </code>
+        <code> </code>
+        <code>if (price >= 2500) {</code>
+        <code>  getDiscount(10);</code>
+        <code>}</code>
+        <code>else if (price >= 2000 && price < 2500) {                        </code>
+        <code>  getDiscount(6);</code>
+        <code>}</code>
+        <code>else {</code>
+        <code>  getDiscount(2);</code>
+        <code>}</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Циклы</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Число чашек из под кофе: 15</code>
+        <code> </code>
+        <code>Повторять (от 0 и пока счётчик меньше числа чашек, с шагом 1)</code>
+        <code>  Взять чашку</code>
+        <code>  Мыть чашку</code>
+        <code>  Сушить чашку</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>const cupsCounter = 15;                    </code>
+        <code> </code>
+        <code>for (let i = 0; i < cupsCounter; i = i + 1) {                       </code>
+        <code>  takeCup();</code>
+        <code>  washCup();</code>
+        <code>  dryCup();</code>
+        <code>}</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Функция</h2>
+    <div style="position: relative;">
+      <pre class="language-">
+        <code>Приготовь капучино</code>
+        <code>  Измельчи зёрна кофе</code>
+        <code>  Приготовь эспрессо</code>
+        <code>  Взбей молоко</code>
+        <code>  Влей в чашку эспрессо</code>
+        <code>  Влей в чашку взбитое молоко</code>
+        <code> </code>
+      </pre>
+      <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
+        <code>function makeCappuccino() {                    </code>
+        <code>  // Измельчи зёрна кофе</code>
+        <code>  // Приготовь эспрессо</code>
+        <code>  // Взбей молоко</code>
+        <code>  // Влей в чашку эспрессо</code>
+        <code>  // Влей в чашку взбитое молоко</code>
+        <code>}</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Функция — проименованный алгоритм</h2>
+    <pre class="language-js">
+      <code>// Функция есть, но пока не срабатывала</code>
+      <code>function makeCappuccino() {</code>
+      <code>  // Набор действий</code>
+      <code>}</code>
+      <code> </code>
+      <code>// Чтобы сработала, её нужно вызвать по имени:</code>
+      <code>makeCappuccino();</code>
+      <code> </code>
+      <code>// Вызывать можно сколько угодно раз</code>
+      <code>makeCappuccino();</code>
+      <code>makeCappuccino();</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Функция всегда что-то возвращает</h2>
+    <pre class="language-js">
+      <code>function makeCappuccino() {</code>
+      <code>  // Набор действий, создающих cappuccino</code>
+      <code>  return cappuccino;</code>
+      <code>}</code>
+      <code> </code>
+      <code>// Функция вернёт капучино, нальём его в чашку</code>
+      <code>let cupCoffee = makeCappuccino();</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Функции можно указать КАК ей сработать</h2>
+    <pre class="language-js">
+      <code>function makeCappuccino(volume) {</code>
+      <code>  // Набор действий, создающих cappuccino указанного объема</code>
+      <code>  return cappuccino;</code>
+      <code>}</code>
+      <code> </code>
+      <code>// Функция вернёт 300 мл капучино, нальём его в мою чашку</code>
+      <code>let cupCoffeeMe = makeCappuccino(300);</code>
+      <code> </code>
+      <code>// Функция вернёт 150 мл капучино, нальём его в твою чашку</code>
+      <code>let cupCoffeeYou = makeCappuccino(150);</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Ближе к реальности: подсчёт стоимости корзины</h2>
+    <pre class="language-js">
+      <code>const cart = [</code>
+      <code>  { name: 'кофе',   price: 400, },</code>
+      <code>  { name: 'молоко', price: 100, },</code>
+      <code>  { name: 'сливки', price: 300, },</code>
+      <code>];</code>
+      <code> </code>
+      <code>function getCartPrice(array) {</code>
+      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  // циклом обойти товары, прибавлять их стоимость к price</code>
+      <code>  return price; // вернуть подсчитанную стоимость</code>
+      <code>}</code>
+      <code>let cartPrice = getCartPrice(cart);</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre class="language-js">
+      <code>const cart = [</code>
+      <code>  { name: 'кофе',   price: 400, },</code>
+      <code>  { name: 'молоко', price: 100, },</code>
+      <code>  { name: 'сливки', price: 300, },</code>
+      <code>];</code>
+      <code> </code>
+      <code>function getCartPrice(array) {</code>
+      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  for (let i = 0; i < array.length; i = i + 1) {</code>
+      <code>    price = price + array[i].price;</code>
+      <code>  }</code>
+      <code>  return price; // вернуть подсчитанную стоимость</code>
+      <code>}</code>
+      <code> </code>
+      <code>let cartPrice = getCartPrice(cart); // 800</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre class="language-js">
+      <code>const cart = [</code>
+      <code>  { name: 'кофе',   price: 400, quantity: 2 },</code>
+      <code>  { name: 'молоко', price: 100, quantity: 1 },</code>
+      <code>  { name: 'сливки', price: 300, quantity: 1 },</code>
+      <code>];</code>
+      <code> </code>
+      <code>function getCartPrice(array) {</code>
+      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  for (let i = 0; i < array.length; i = i + 1) {</code>
+      <code>    price = price + ( array[i].price * array[i].quantity );</code>
+      <code>  }</code>
+      <code>  return price; // вернуть подсчитанную стоимость</code>
+      <code>}</code>
+      <code> </code>
+      <code>let cartPrice = getCartPrice(cart); // 1200</code>
+    </pre>
+  </section>
+
+  <!-- <section class="slide">
+    <h2>Не весь код срабатывает сразу</h2>
+    <pre class="language-js">
+      <code>const promoThumb = document.querySelector('.thumb');</code>
+      <code>promoThumb.addEventListener('click', showModal(picture))</code>
+    </pre>
+  </section> -->
+
+  <!-- <section class="slide">
+    <h2>Функция — это тоже тип данных</h2>
+    <pre class="language-js">
+      <code>function makeCoffee(quantity) {</code>
+      <code>  return `Держи ${quantity} порций кофе!`;</code>
+      <code>}</code>
+      <code> </code>
+      <code>let makeCoffeeForMe = makeCoffee;</code>
+      <code> </code>
+      <code>alert( makeCoffee(5) );      // Держи 5 порций кофе!</code>
+      <code>alert( makeCoffeeForMe(8) ); // Держи 8 порций кофе!</code>
+    </pre>
+  </section> -->
+
+  <section class="slide">
+    <h2>Javascript</h2>
+    <p>Javascript — прототипно-ориентированный однопоточный асинхронный скриптовой язык программирования.</p>
+    <ul>
+      <li>Прототипно-ориентированный — почти у всего есть прототип.</li>
+      <li class="next">Однопоточный — одна инструкция в единицу времени.</li>
+      <li class="next">Асинхронный — код может выполниться не сразу.</li>
+      <li class="next">Скриптовой — нуждается в интерпретаторе (браузер, node.js).</li>
+    </ul>
+  </section>
+
+
+
+
+
+
+
+  <div class="slide black" id="bonus" style="display: flex; justify-content: center; align-items: center;">
+    <img class="cover" src="pictures/image_epixx_20170817_html_012.jpg" style="width: 105%; height: auto; max-height: none; filter: blur(3px);" alt="">
+    <p style="color: #fff; z-index: 2; max-width: 446px; text-align: center;"><b>Бонус</b> <br>скидка 10% на любой курс в <a href="https://epixx.ru/">EpicSkills</a> по промо-коду <b>JS18+</b> (до 20.05.2020)</p>
+    <style>
+      #bonus:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+      }
+    </style>
+  </div>
+
+  <section class="slide">
+    <h2>Вопросы?</h2>
+    <ul>
+      <li><a href="https://vk.com/n.gromov">vk.com/n.gromov</a></li>
+      <li><a href="http://nicothin.pro/contact">nicothin.pro/contact</a></li>
+    </ul>
+    <p>Николай Громов.</p>
+  </section>
+
+
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <script src="prism/prism.js"></script>
+
+</body>
+</html>
