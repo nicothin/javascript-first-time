@@ -102,7 +102,7 @@
   </section>
 
   <section class="slide" style="background-color: #DED5CB;">
-    <h2 style="text-align: center;">Алгоритм — инструкция как работать с данными</h2>
+    <h2 style="text-align: center;">Алгоритм — инструкция как работать с данными</h2 >
     <img class="cover" src="pictures/coffee-2.jpg" alt="coffee" style="height: 80%; width: auto; transform: translate(-50%,-42%);">
   </section>
 
@@ -407,8 +407,7 @@
         <code>  Измельчи зёрна кофе</code>
         <code>  Приготовь эспрессо</code>
         <code>  Взбей молоко</code>
-        <code>  Влей в чашку эспрессо</code>
-        <code>  Влей в чашку взбитое молоко</code>
+        <code>  Смешай эспрессо и взбитое молоко</code>
         <code> </code>
       </pre>
       <pre class="language-js  next" style="position: absolute; top: -1em; left: 0;">
@@ -416,8 +415,7 @@
         <code>  // Измельчи зёрна кофе</code>
         <code>  // Приготовь эспрессо</code>
         <code>  // Взбей молоко</code>
-        <code>  // Влей в чашку эспрессо</code>
-        <code>  // Влей в чашку взбитое молоко</code>
+        <code>  // Смешай эспрессо и взбитое молоко</code>
         <code>}</code>
       </pre>
     </div>
@@ -479,7 +477,7 @@
       <code>];</code>
       <code> </code>
       <code>function getCartPrice(array) {</code>
-      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  let price = 0; // общая стоимость (пока — 0)</code>
       <code>  // циклом обойти товары, прибавлять их стоимость к price</code>
       <code>  return price; // вернуть подсчитанную стоимость</code>
       <code>}</code>
@@ -496,7 +494,7 @@
       <code>];</code>
       <code> </code>
       <code>function getCartPrice(array) {</code>
-      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  let price = 0; // общая стоимость (пока — 0)</code>
       <code>  for (let i = 0; i < array.length; i = i + 1) {</code>
       <code>    price = price + array[i].price;</code>
       <code>  }</code>
@@ -516,7 +514,7 @@
       <code>];</code>
       <code> </code>
       <code>function getCartPrice(array) {</code>
-      <code>  let cartPrice = 0; // общая стоимость (пока — 0)</code>
+      <code>  let price = 0; // общая стоимость (пока — 0)</code>
       <code>  for (let i = 0; i < array.length; i = i + 1) {</code>
       <code>    price = price + ( array[i].price * array[i].quantity );</code>
       <code>  }</code>
@@ -527,15 +525,7 @@
     </pre>
   </section>
 
-  <!-- <section class="slide">
-    <h2>Не весь код срабатывает сразу</h2>
-    <pre class="language-js">
-      <code>const promoThumb = document.querySelector('.thumb');</code>
-      <code>promoThumb.addEventListener('click', showModal(picture))</code>
-    </pre>
-  </section> -->
-
-  <!-- <section class="slide">
+  <section class="slide">
     <h2>Функция — это тоже тип данных</h2>
     <pre class="language-js">
       <code>function makeCoffee(quantity) {</code>
@@ -547,7 +537,116 @@
       <code>alert( makeCoffee(5) );      // Держи 5 порций кофе!</code>
       <code>alert( makeCoffeeForMe(8) ); // Держи 8 порций кофе!</code>
     </pre>
-  </section> -->
+  </section>
+
+  <section class="slide">
+    <h2>Функция — это тоже тип данных</h2>
+    <pre class="language-js">
+      <code>const makeCoffee = function(quantity) {</code>
+      <code>  return `Держи ${quantity} порций кофе!`;</code>
+      <code>}</code>
+      <code> </code>
+      <code>let makeCoffeeForMe = makeCoffee;</code>
+      <code> </code>
+      <code>alert( makeCoffee(5) );      // Держи 5 порций кофе!</code>
+      <code>alert( makeCoffeeForMe(8) ); // Держи 8 порций кофе!</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Функция как значение поля объекта</h2>
+    <pre class="language-js">
+      <code>const barista = {</code>
+      <code>  name: 'Вальдемар',</code>
+      <code>  age: '21',</code>
+      <code>  makeCappuccino: function() {</code>
+      <code>    return `Это капучино`;</code>
+      <code>  },</code>
+      <code>};</code>
+      <code> </code>
+      <code>let cup = barista.makeCappuccino();</code>
+      <code> </code>
+      <code>alert( barista.name );</code>
+      <code>alert( barista.makeCappuccino() );</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Функция как значение поля объекта</h2>
+    <pre class="language-js">
+      <code>const barista = {</code>
+      <code>  name: 'Вальдемар',</code>
+      <code>  age: '21',</code>
+      <code>  makeCappuccino() {</code>
+      <code>    return `Это капучино`;</code>
+      <code>  },</code>
+      <code>};</code>
+      <code> </code>
+      <code>let cup = barista.makeCappuccino();</code>
+      <code> </code>
+      <code>alert( barista.name );</code>
+      <code>alert( barista.makeCappuccino() );</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre class="language-js">
+      <code>const cart = {</code>
+      <code>  products: [</code>
+      <code>    { name: 'кофе',   price: 400, quantity: 2 },</code>
+      <code>    { name: 'молоко', price: 100, quantity: 1 },</code>
+      <code>    { name: 'сливки', price: 300, quantity: 1 },</code>
+      <code>  ],</code>
+      <code>  getPrice() {</code>
+      <code>    let price = 0;</code>
+      <code>    for (let i = 0; i < this.products.length; i = i + 1) {</code>
+      <code>      price = price + this.products[i].price * this.products[i].quantity;</code>
+      <code>    }</code>
+      <code>    return price;</code>
+      <code>  }</code>
+      <code>}</code>
+      <code>alert( cart.getPrice() ); // 1200</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Не весь код срабатывает сразу</h2>
+    <pre class="language-js">
+      <code>// В контексте выполнения есть глобальный объект caffe</code>
+      <code>const autoBarista = { /* объект со свойствами и методами */ };</code>
+      <code>const button = cafe.getElementById('coffee-button');</code>
+      <code> </code>
+      <code>button.addEventListener('click', makeCoffee);</code>
+      <code> </code>
+      <code>function makeCoffee() {</code>
+      <code>  const cup = autoBarista.makeCoffee();</code>
+      <code>  return cup;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Не весь код срабатывает сразу</h2>
+    <pre class="language-js">
+      <code>const button = document.getElementById('btn');</code>
+      <code>const log = document.getElementById('log');</code>
+      <code>button.addEventListener('click', showLogMessage);</code>
+      <code> </code>
+      <code>function showLogMessage() {</code>
+      <code>  log.innerHTML = 'Был клик по кнопке';</code>
+      <code>}</code>
+    </pre>
+    <p>Собственно: <button id="btn" style="background: #28a745; font-size: 1em; border: 0; border-radius: 0.2em; padding: 0.3em 0.8em; color: #fff;">Кнопка</button></p>
+    <p id="log">После клика текст заменится.</p>
+    <script>
+      const button = document.getElementById('btn');
+      const log = document.getElementById('log');
+      button.addEventListener('click', showLogMessage);
+      function showLogMessage() {
+        log.innerHTML = 'Был клик по кнопке';
+      }
+    </script>
+  </section>
 
   <section class="slide">
     <h2>Javascript</h2>
